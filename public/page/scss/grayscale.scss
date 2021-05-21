@@ -1,0 +1,83 @@
+@import 'variables.scss';
+@import 'mixins.scss';
+@import 'navbar.scss';
+@import 'masthead.scss';
+@import 'buttons.scss';
+@import 'about.scss';
+@import 'projects.scss';
+@import 'signup.scss';
+@import 'contact.scss';
+@import 'sesion.scss';
+
+$colors: rgb(151, 144, 144),rgb(204, 197, 197),rgb(138, 125, 125);
+
+
+
+body {
+  font-family: 'Nunito';
+  letter-spacing: 0.0625em;
+}
+
+a {
+  color: $primary;
+  &:focus,
+  &:hover {
+    text-decoration: none;
+    color: darken($primary, 20%);
+  }
+}
+
+.bg-black {
+  background-color: $black !important;
+}
+
+.bg-primary {
+  background-color: $primary !important;
+}
+
+.text-primary {
+  color: $primary !important;
+}
+
+footer {
+  padding: 5rem 0;
+}
+
+main{
+
+  display: grid;
+  align-items: center;
+ justify-content: center;
+  background-color: rgb(217, 222, 224);
+  margin-top: 80px;
+  
+  grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+  grid-gap: 1rem;
+  .card{
+    border: #fff;
+	
+	 padding-top: 20px;
+    transition: transform 1s;
+
+    @for $i from 1 through 2 {
+      &:nth-of-type(#{$i}){
+        background: nth($colors, $i);
+      }
+    }
+    .img{
+    width: 80%;
+        }
+   .info{
+    margin: 50px; 
+        }
+
+
+  }
+
+
+
+}
+
+
+
+
